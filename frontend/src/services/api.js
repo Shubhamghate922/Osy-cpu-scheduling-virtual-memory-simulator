@@ -1,7 +1,8 @@
 // Simple service functions that talk to the Express backend.
 // Uses the Fetch API to keep the project easy to explain.
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "https://osy-cpu-scheduling-virtual-memory-rswp.onrender.com/api";
 
 // Sends process data + selected algorithm to the backend
 // and returns the calculated CPU scheduling result.
