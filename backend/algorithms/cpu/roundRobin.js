@@ -102,6 +102,8 @@ function runRoundRobin(processes, timeQuantum) {
       queue.push(arrivalPointer);
       arrivalPointer++;
     }
+  }    // ← THIS closing brace was missing in your file
+
   // Build the final results using the calculated completion times
   const results = remaining.map((process) => {
     const turnaroundTime = process.completionTime - process.arrivalTime;
