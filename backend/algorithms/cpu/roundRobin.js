@@ -91,14 +91,17 @@ function runRoundRobin(processes, timeQuantum) {
     }
 
     // If the ready queue is empty but processes are still waiting to arrive,
-    // move the clock forward to the next arrival
+    // move the clock forward to the next arrival and record the gap as idle
     if (queue.length === 0 && arrivalPointer < totalProcesses) {
-      currentTime = Math.max(currentTime, remaining[arrivalPointer].arrivalTime);
+      const nextArrival = remaining[arrivalPointer].arrivalTime;
+      const gapStart = currentTime;
+      currentTime = Math.max(currentTime, nextArrival);
+      if (currentTime > gapStart) {
+        ganttChart.push({ id: "IDLE", start: gapStart, end: currentTime });
+      }
       queue.push(arrivalPointer);
       arrivalPointer++;
     }
-  }
-
   // Build the final results using the calculated completion times
   const results = remaining.map((process) => {
     const turnaroundTime = process.completionTime - process.arrivalTime;
