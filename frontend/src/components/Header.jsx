@@ -8,6 +8,9 @@ function Header() {
         <p className="mt-2 text-purple-100 font-medium">
           Operating System – Course Code 315319
         </p>
+        <p className="mt-2 text-purple-100 font-medium">
+          Government Polytechnic College, Washim
+        </p>
         <p className="text-purple-200 text-sm">
           5th Semester Diploma in Information Technology
         </p>
