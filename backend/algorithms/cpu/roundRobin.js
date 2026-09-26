@@ -40,8 +40,13 @@ function runRoundRobin(processes, timeQuantum) {
   }
 
   // If nothing has arrived yet, jump time to the first arrival
+  // and record that idle gap as its own Gantt chart segment
   if (queue.length === 0 && arrivalPointer < totalProcesses) {
-    currentTime = remaining[arrivalPointer].arrivalTime;
+    const nextArrival = remaining[arrivalPointer].arrivalTime;
+    if (nextArrival > currentTime) {
+      ganttChart.push({ id: "IDLE", start: currentTime, end: nextArrival });
+    }
+    currentTime = nextArrival;
     queue.push(arrivalPointer);
     arrivalPointer++;
   }
