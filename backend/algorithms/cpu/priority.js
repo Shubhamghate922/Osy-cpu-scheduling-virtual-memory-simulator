@@ -45,13 +45,15 @@ function runPriority(processes) {
     }
 
     // If no process has arrived yet, move time forward to the next arrival
-    if (selectedIndex === -1) {
-      const nextArrival = Math.min(
-        ...pending.filter((p, i) => !isDone[i]).map((p) => p.arrivalTime)
-      );
-      currentTime = nextArrival;
-      continue;
-    }
+// and record that idle gap as its own Gantt chart segment
+if (selectedIndex === -1) {
+  const nextArrival = Math.min(
+    ...pending.filter((p, i) => !isDone[i]).map((p) => p.arrivalTime)
+  );
+  ganttChart.push({ id: "IDLE", start: currentTime, end: nextArrival });
+  currentTime = nextArrival;
+  continue;
+}
 
     const process = pending[selectedIndex];
     const startTime = currentTime;
