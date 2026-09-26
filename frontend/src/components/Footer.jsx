@@ -7,6 +7,7 @@ function Footer() {
         </p>
         <p>Operating System – 315319</p>
         <p>5th Semester Diploma in Information Technology</p>
+        <p>© 2026 Developed by Shubham Vijay Ghate</p>
       </div>
     </footer>
   );
