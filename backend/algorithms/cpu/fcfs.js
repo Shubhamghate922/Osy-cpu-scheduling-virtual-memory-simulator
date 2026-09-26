@@ -16,9 +16,15 @@ function runFCFS(processes) {
     const process = sorted[i];
 
     // If the CPU is idle before this process arrives, move time forward
-    if (currentTime < process.arrivalTime) {
-      currentTime = process.arrivalTime;
-    }
+// and record that idle gap as its own Gantt chart segment
+if (currentTime < process.arrivalTime) {
+  ganttChart.push({
+    id: "IDLE",
+    start: currentTime,
+    end: process.arrivalTime
+  });
+  currentTime = process.arrivalTime;
+}
 
     const startTime = currentTime;
     const completionTime = startTime + process.burstTime;

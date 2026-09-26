@@ -47,14 +47,34 @@ function runSRTF(processes) {
     }
 
     if (shortestIndex === -1) {
-      // CPU is idle at this time unit
-      if (lastRunningId !== null) {
-        // Close the previous Gantt segment
-        ganttChart.push({ id: lastRunningId, start: segmentStart, end: currentTime });
-        lastRunningId = null;
+      // CPU is idle at this time unit - track it the same way a running
+      // process is tracked, using "IDLE" as a placeholder id, so that
+      // consecutive idle units merge into a single Gantt segment.
+      if (lastRunningId !== "IDLE") {
+        if (lastRunningId !== null) {
+          ganttChart.push({ id: lastRunningId, start: segmentStart, end: currentTime });
+        }
+        segmentStart = currentTime;
+        lastRunningId = "IDLE";
       }
       currentTime++;
       continue;
+    }
+
+    const process = remaining[shortestIndex];
+
+    // Record the first time this process ever gets the CPU (for response time)
+    if (process.firstStartTime === null) {
+      process.firstStartTime = currentTime;
+    }
+
+    // Track Gantt chart segments (group consecutive time units of the same process)
+    if (lastRunningId !== process.id) {
+      if (lastRunningId !== null) {
+        ganttChart.push({ id: lastRunningId, start: segmentStart, end: currentTime });
+      }
+      segmentStart = currentTime;
+      lastRunningId = process.id;
     }
 
     const process = remaining[shortestIndex];
