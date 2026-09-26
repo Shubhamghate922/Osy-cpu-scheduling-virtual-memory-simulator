@@ -7,7 +7,10 @@ const cpuRoutes = require("./routes/cpuRoutes");
 const memoryRoutes = require("./routes/memoryRoutes");
 
 const app = express();
-const PORT = 5000;
+// Render (and most hosting platforms) assign a port dynamically via the
+// PORT environment variable and only route traffic to that exact port.
+// Falling back to 5000 keeps local development working unchanged.
+const PORT = process.env.PORT || 5000;
 
 // ----- Middleware -----
 app.use(cors());          // Allow the React frontend to talk to this backend
