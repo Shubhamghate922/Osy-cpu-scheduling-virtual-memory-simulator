@@ -72,13 +72,15 @@ function simulateCpu(req, res) {
 
   // ----- Normalize process data -----
 
-  const cleanProcesses = processes.map((p) => ({
-    id: p.id,
-    arrivalTime: Number(p.arrivalTime),
-    burstTime: Number(p.burstTime),
-    priority: p.priority !== undefined && p.priority !== "" ? Number(p.priority) : 0
-  }));
-
+const cleanProcesses = processes.map((p) => ({
+  id: p.id,
+  arrivalTime: Number(p.arrivalTime),
+  burstTime: Number(p.burstTime),
+  // Priority is only meaningful for Priority Scheduling. For every other
+  // algorithm we deliberately drop it to null so the frontend never shows
+  // a leftover or default priority number the user never entered.
+  priority: normalizedAlgorithm === "PRIORITY" ? Number(p.priority) : null
+}));
   // ----- Run the selected algorithm -----
 
   let simulationOutput;
