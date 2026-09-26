@@ -77,21 +77,7 @@ function runSRTF(processes) {
       lastRunningId = process.id;
     }
 
-    const process = remaining[shortestIndex];
-
-    // Record the first time this process ever gets the CPU (for response time)
-    if (process.firstStartTime === null) {
-      process.firstStartTime = currentTime;
-    }
-
-    // Track Gantt chart segments (group consecutive time units of the same process)
-    if (lastRunningId !== process.id) {
-      if (lastRunningId !== null) {
-        ganttChart.push({ id: lastRunningId, start: segmentStart, end: currentTime });
-      }
-      segmentStart = currentTime;
-      lastRunningId = process.id;
-    }
+    
 
     // Run this process for one unit of time
     process.remainingTime--;
