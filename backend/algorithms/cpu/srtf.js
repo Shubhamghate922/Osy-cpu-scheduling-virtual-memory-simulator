@@ -77,8 +77,6 @@ function runSRTF(processes) {
       lastRunningId = process.id;
     }
 
-    
-
     // Run this process for one unit of time
     process.remainingTime--;
     currentTime++;
