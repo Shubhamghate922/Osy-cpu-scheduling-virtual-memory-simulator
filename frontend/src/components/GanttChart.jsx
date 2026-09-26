@@ -34,7 +34,7 @@ function GanttChart({ ganttChart }) {
         <div className="flex min-w-max border border-purple-300 rounded-lg overflow-hidden">
           {ganttChart.map((segment, index) => {
             const duration = segment.end - segment.start;
-            const widthPx = Math.max(duration * 40, 40); // 40px per time unit, minimum 40px
+            const widthPx = Math.max(duration * 40, 40);
 
             return (
               <div
