@@ -6,16 +6,25 @@
 const SEGMENT_COLORS = ["bg-purple-600", "bg-purple-400"];
 const IDLE_COLOR = "bg-red-500";
 
+// Treats "IDLE", "Idle", "idle", etc. as the same idle marker.
+function isIdleSegment(segment) {
+  return String(segment.id).toUpperCase() === "IDLE";
+}
+
 function getSegmentColor(segment, index) {
-  if (segment.id === "IDLE") {
+  if (isIdleSegment(segment)) {
     return IDLE_COLOR;
   }
   return SEGMENT_COLORS[index % SEGMENT_COLORS.length];
 }
 
 function GanttChart({ ganttChart }) {
-  const totalTime = ganttChart.length > 0 ? ganttChart[ganttChart.length - 1].end : 0;
-  const hasIdleTime = ganttChart.some((segment) => segment.id === "IDLE");
+  if (!ganttChart || ganttChart.length === 0) {
+    return null;
+  }
+
+  const totalTime = ganttChart[ganttChart.length - 1].end;
+  const hasIdleTime = ganttChart.some((segment) => isIdleSegment(segment));
 
   return (
     <div className="bg-white border border-purple-200 rounded-xl shadow-sm p-4">
@@ -36,7 +45,7 @@ function GanttChart({ ganttChart }) {
                   getSegmentColor(segment, index)
                 }
               >
-                {segment.id === "IDLE" ? "Idle" : segment.id}
+                {isIdleSegment(segment) ? "Idle" : segment.id}
               </div>
             );
           })}
