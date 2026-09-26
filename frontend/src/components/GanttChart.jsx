@@ -21,7 +21,7 @@ function GanttChart({ ganttChart }) {
     <div className="bg-white border border-purple-200 rounded-xl shadow-sm p-4">
       <h3 className="text-purple-700 font-bold mb-3">Gantt Chart</h3>
 
-      <div className="overflow-x-auto overflow-y-hidden">
+      <div className="overflow-x-auto">
         <div className="flex min-w-max border border-purple-300 rounded-lg overflow-hidden">
           {ganttChart.map((segment, index) => {
             const duration = segment.end - segment.start;
