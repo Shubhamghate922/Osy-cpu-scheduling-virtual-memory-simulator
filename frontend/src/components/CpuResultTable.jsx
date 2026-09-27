@@ -4,6 +4,20 @@ function CpuResultTable({ processResults }) {
   // instead of displaying a number the user never entered.
   const showPriority = processResults.some((process) => process.priority !== null);
 
+  // Sort a COPY of the results by the numeric part of the process id so
+  // the table always reads P1, P2, P3, ... regardless of the order in
+  // which the scheduling algorithm finished them. Ids without digits
+  // fall back to a plain alphabetical comparison.
+  const sortedResults = [...processResults].sort((a, b) => {
+    const aNum = parseInt(String(a.id).replace(/\D/g, ""), 10);
+    const bNum = parseInt(String(b.id).replace(/\D/g, ""), 10);
+
+    if (!Number.isNaN(aNum) && !Number.isNaN(bNum)) {
+      return aNum - bNum;
+    }
+    return String(a.id).localeCompare(String(b.id));
+  });
+
   return (
     <div className="overflow-x-auto bg-white border border-purple-200 rounded-xl shadow-sm">
       <table className="min-w-full text-sm text-left">
@@ -20,7 +34,7 @@ function CpuResultTable({ processResults }) {
           </tr>
         </thead>
         <tbody>
-          {processResults.map((process) => (
+          {sortedResults.map((process) => (
             <tr key={process.id} className="border-t border-purple-100">
               <td className="px-4 py-2 font-semibold">{process.id}</td>
               <td className="px-4 py-2">{process.arrivalTime}</td>
