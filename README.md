@@ -4,16 +4,7 @@ An interactive educational web application for understanding CPU Scheduling Algo
 
 Designed for Diploma in Information Technology students studying Operating Systems under the MSBTE K Scheme.
 
-<div align="center">"Operating System" (https://img.shields.io/badge/Subject-Operating%20System-blue?style=for-the-badge)
-"Course Code" (https://img.shields.io/badge/Course%20Code-315319-green?style=for-the-badge)
-"Semester" (https://img.shields.io/badge/Semester-5th-orange?style=for-the-badge)
-"MSBTE" (https://img.shields.io/badge/Curriculum-MSBTE%20K%20Scheme-red?style=for-the-badge)
 
-"React" (https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-"Tailwind CSS" (https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-"Vite" (https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-"Node.js" (https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-"Express.js" (https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
 "📂 GitHub Repository" (https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator)
 
