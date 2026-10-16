@@ -1,647 +1,471 @@
 💻 CPU Scheduling Algorithm & Virtual Memory and Page Fault Simulator
 
-<div align="center">
+An interactive educational web application for understanding CPU Scheduling Algorithms, Virtual Memory, and Page Replacement Algorithms through step-by-step simulations.
 
-https://img.shields.io/badge/Subject-Operating%20System-blue?style=for-the-badge
-https://img.shields.io/badge/Course%20Code-315319-green?style=for-the-badge
-https://img.shields.io/badge/Semester-5th-orange?style=for-the-badge
-https://img.shields.io/badge/Curriculum-MSBTE%20K%20Scheme-red?style=for-the-badge
+Designed for Diploma in Information Technology students studying Operating Systems under the MSBTE K Scheme.
 
-https://img.shields.io/badge/React.js-61DAFB?style=for-the-badge&logo=react&logoColor=black
-https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
-https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white
-https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
+<div align="center">"Operating System" (https://img.shields.io/badge/Subject-Operating%20System-blue?style=for-the-badge)
+"Course Code" (https://img.shields.io/badge/Course%20Code-315319-green?style=for-the-badge)
+"Semester" (https://img.shields.io/badge/Semester-5th-orange?style=for-the-badge)
+"MSBTE" (https://img.shields.io/badge/Curriculum-MSBTE%20K%20Scheme-red?style=for-the-badge)
 
-An interactive web application for learning and understanding CPU scheduling algorithms and virtual memory page replacement algorithms.
+"React" (https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+"Tailwind CSS" (https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+"Vite" (https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+"Node.js" (https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+"Express.js" (https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-🔗 GitHub Repository • 🚀 Live Demo
+"📂 GitHub Repository" (https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator)
 
-</div>
+"🚀 Live Demo" (https://osy-cpu-scheduling.vercel.app/)
 
----
+</div>---
 
-📚 Table of Contents
+📑 Table of Contents
 
-· About the Project
-· Project Features
-· Technologies Used
-· System Requirements
-· Project Structure
-· Installation Guide
-  · Step 1: Download the Project
-  · Step 2: Install Node.js
-  · Step 3: Open the Project
-  · Step 4: Install Backend Dependencies
-  · Step 5: Start the Backend Server
-  · Step 6: Install Frontend Dependencies
-  · Step 7: Start the Frontend Website
-· How to Use the Simulator
-· CPU Scheduling Algorithms
-· Virtual Memory Algorithms
-· API Documentation
-· How the Application Works
-· Troubleshooting
-· Frequently Asked Questions
-· Learning Outcomes
-· Academic Information
+- "About the Project" (#-about-the-project)
+- "Project Objectives" (#-project-objectives)
+- "Key Features" (#-key-features)
+- "CPU Scheduling Algorithms" (#-cpu-scheduling-algorithms)
+- "Virtual Memory Algorithms" (#-virtual-memory-algorithms)
+- "Technologies Used" (#-technologies-used)
+- "System Requirements" (#-system-requirements)
+- "Project Structure" (#-project-structure)
+- "Installation and Setup" (#-installation-and-setup)
+- "How to Use" (#-how-to-use)
+- "Important Formulas" (#-important-formulas)
+- "API Documentation" (#-api-documentation)
+- "Application Architecture" (#-application-architecture)
+- "Troubleshooting" (#-troubleshooting)
+- "Learning Outcomes" (#-learning-outcomes)
+- "Academic Information" (#-academic-information)
 
 ---
 
 📖 About the Project
 
-The CPU Scheduling Algorithm & Virtual Memory and Page Fault Simulator is an educational web application designed to make Operating System concepts easier to understand through practical demonstrations.
+The CPU Scheduling Algorithm & Virtual Memory and Page Fault Simulator is an educational web application that demonstrates important Operating System concepts using interactive simulations.
 
-The project contains two main modules:
+Instead of learning algorithms only through theory, students can enter their own inputs, execute simulations, and understand the results.
 
-🖥️ CPU Scheduling Simulator
+The application contains two main modules:
 
-CPU scheduling is the process by which an operating system decides which process should execute on the CPU.
+🖥️ 1. CPU Scheduling Simulator
 
-The simulator supports five CPU scheduling algorithms:
+Simulates CPU scheduling algorithms and displays process execution details, including completion time, turnaround time, waiting time, response time, and Gantt charts.
 
-# Algorithm Type
-1 First Come, First Served (FCFS) Non-Preemptive
-2 Shortest Job First (SJF) Non-Preemptive
-3 Shortest Remaining Time First (SRTF) Preemptive
-4 Priority Scheduling Preemptive/Non-Preemptive
-5 Round Robin Preemptive
+💾 2. Virtual Memory and Page Fault Simulator
 
-Results include:
+Demonstrates page replacement algorithms using memory frames and a page reference string. It displays page hits, page faults, frame changes, and performance ratios.
 
-· ✅ Completion Time (CT)
-· ✅ Turnaround Time (TAT)
-· ✅ Waiting Time (WT)
-· ✅ Response Time (RT)
-· ✅ Average Turnaround Time
-· ✅ Average Waiting Time
-· ✅ Gantt Chart
-
-💾 Virtual Memory and Page Fault Simulator
-
-Virtual memory allows an operating system to manage memory by loading the required pages into physical memory as needed. When the requested page is not present in memory, a page fault occurs.
-
-The simulator supports three page replacement algorithms:
-
-# Algorithm Description
-1 First In, First Out (FIFO) Replaces the oldest page
-2 Least Recently Used (LRU) Replaces least recently used page
-3 Optimal Page Replacement Replaces page used farthest in future
-
-Displays:
-
-· ✅ Step-by-step frame table
-· ✅ Page hits
-· ✅ Page faults
-· ✅ Hit ratio
-· ✅ Page fault ratio
-· ✅ Memory frame changes
-
-🎯 Project Objective
-
-The main objective of this project is to help students understand the working of CPU scheduling and page replacement algorithms by providing an interactive environment in which they can test different inputs and compare the results.
+«🎯 Main Objective: To make Operating System concepts easier to understand through practical, interactive, and visual demonstrations.»
 
 ---
 
-✨ Project Features
+✨ Key Features
 
 🖥️ CPU Scheduling
 
-· ✅ Supports five scheduling algorithms
-· ✅ Accepts user-defined process information
-· ✅ Calculates process execution statistics
-· ✅ Displays a Gantt chart
-· ✅ Calculates average waiting and turnaround times
-· ✅ Supports preemptive and non-preemptive scheduling methods
+- ✅ Five CPU scheduling algorithms.
+- ✅ User-defined process information.
+- ✅ Support for arrival time, burst time, and priority.
+- ✅ Preemptive and non-preemptive scheduling.
+- ✅ Interactive Gantt chart.
+- ✅ Completion, turnaround, waiting, and response times.
+- ✅ Average waiting time and average turnaround time.
+- ✅ Round Robin time quantum configuration.
 
 💾 Virtual Memory
 
-· ✅ Supports FIFO, LRU, and Optimal algorithms
-· ✅ Accepts a custom page reference string
-· ✅ Allows the user to specify the number of frames
-· ✅ Displays memory contents after each page reference
-· ✅ Calculates page hits and page faults
-· ✅ Calculates hit and page fault ratios
+- ✅ Three page replacement algorithms.
+- ✅ Custom page reference strings.
+- ✅ Configurable number of memory frames.
+- ✅ Step-by-step memory frame table.
+- ✅ Page hit and page fault calculations.
+- ✅ Hit ratio and page fault ratio.
+- ✅ Visual representation of memory changes.
 
-🔧 General Features
+⚙️ General Features
 
-· ✅ Interactive user interface
-· ✅ Separate CPU Scheduling and Virtual Memory modules
-· ✅ React-based frontend
-· ✅ Node.js and Express.js backend
-· ✅ Communication through REST APIs
-· ✅ Input validation
-· ✅ No database installation required
-· ✅ Designed for Operating System learning and practical demonstrations
-
----
-
-🛠️ Technologies Used
-
-Technology Purpose
-React.js Creates the interactive user interface
-Tailwind CSS Styles the application
-Vite Runs the frontend development server
-Node.js Provides the JavaScript runtime for the backend
-Express.js Handles API requests and responses
-JavaScript Implements the simulation algorithms
-REST API Enables communication between the frontend and backend
-JSON Transfers input data and simulation results
-
-🗄️ Database
-
-No database is required. The application is designed to calculate simulation results when a request is submitted. It does not require MongoDB, MySQL, or another database server.
+- ✅ Interactive and user-friendly interface.
+- ✅ Separate CPU Scheduling and Virtual Memory modules.
+- ✅ React-based frontend.
+- ✅ Node.js and Express.js backend.
+- ✅ REST API communication using JSON.
+- ✅ Input validation and error handling.
+- ✅ No database installation required.
 
 ---
 
-💻 System Requirements
+🖥️ CPU Scheduling Algorithms
 
-Before running the project, make sure you have the following:
+The simulator supports the following algorithms:
 
-Requirement Description
-Operating System Windows, macOS, or Linux
-Node.js An installed LTS version
-npm Installed with Node.js
-Code Editor Visual Studio Code is recommended
-Web Browser Google Chrome, Microsoft Edge, or another modern browser
-Internet Connection Required for initial download and dependency installation
+No.| Algorithm| Type| Description
+1| FCFS| Non-Preemptive| Executes processes in arrival order.
+2| SJF| Non-Preemptive| Selects the available process with the shortest burst time.
+3| SRTF| Preemptive| Selects the process with the shortest remaining execution time.
+4| Priority Scheduling| Preemptive / Non-Preemptive| Selects processes according to their priority.
+5| Round Robin| Preemptive| Allocates a fixed time quantum to each process.
 
-❌ Software You Do NOT Need
+Important: In Priority Scheduling, a smaller priority number represents a higher priority.
 
-You do not need to install:
+📊 CPU Scheduling Results
 
-· ❌ MongoDB
-· ❌ MongoDB Compass
-· ❌ MySQL
-· ❌ Python
-· ❌ A separate database server
+The simulator calculates:
 
-Note: The setup instructions below use Windows and PowerShell. Users of macOS or Linux can follow the same general steps with their terminal.
-
----
-
-📁 Project Structure
-
-```
-cpu-memory-simulator/
-│
-├── backend/
-│   ├── package.json
-│   ├── server.js
-│   └── ... (algorithm implementations)
-│
-└── frontend/
-    ├── package.json
-    ├── src/
-    │   ├── services/
-    │   │   └── api.js
-    │   └── ... (React components)
-    └── ...
-```
-
-Important: Open the main project folder containing both backend and frontend. Do not open either subfolder as the entire project.
-
----
-
-🚀 Installation Guide
-
-📥 Step 1: Download the Project
-
-Method A: Download ZIP (Recommended for Beginners)
-
-This method does not require Git.
-
-1. Open the project repository:
-      https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator
-2. Click the green Code button.
-3. Select Download ZIP.
-4. Wait for the ZIP file to download.
-5. Open your Downloads folder.
-6. Right-click the downloaded ZIP file and select Extract All.
-7. Choose a folder where you want to save the project and click Extract.
-
-After extraction, open the extracted project folder. You should be able to locate the backend and frontend directories.
-
-Method B: Clone Using Git
-
-If Git is installed on your computer, open PowerShell and execute:
-
-```bash
-git clone https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator.git
-```
-
-After the download finishes, enter the project directory:
-
-```bash
-cd Osy-cpu-scheduling-virtual-memory-simulator
-```
-
----
-
-📦 Step 2: Install Node.js
-
-Node.js is required to run the backend and the frontend development tools.
-
-1. Download Node.js:
-      Open the official website: https://nodejs.org/
-2. Download the LTS version and install it using the recommended settings.
-3. After installation, close and reopen your terminal.
-4. Verify Node.js:
-
-```bash
-node -v
-```
-
-Expected output (example):
-
-```
-v22.x.x
-```
-
-5. Verify npm:
-
-```bash
-npm -v
-```
-
-If both commands display version numbers, Node.js and npm are available.
-
-⚠️ If either command is not recognized, restart your terminal and check your Node.js installation.
-
----
-
-📂 Step 3: Open the Project in Visual Studio Code
-
-1. Launch Visual Studio Code.
-2. Open the project folder:
-   · Click File → Open Folder
-   · Navigate to the extracted project directory
-   · Select the main project folder
-   · Click Select Folder
-3. Make sure you can see both the backend and frontend folders in the Explorer panel.
-4. Open the terminal:
-   · Click Terminal → New Terminal
-5. Check the project directory:
-
-```bash
-dir
-```
-
-You should see the backend and frontend folders.
-
----
-
-⚙️ Step 4: Install Backend Dependencies
-
-Navigate to the backend folder:
-
-```bash
-cd backend
-```
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-npm reads the backend's package.json file and installs the required packages. Wait until the installation finishes.
-
-⚠️ Do not proceed until the dependencies have installed successfully.
-
----
-
-🚀 Step 5: Start the Backend Server
-
-In the same terminal, run:
-
-```bash
-npm run dev
-```
-
-Expected result:
-
-```
-Server running on http://localhost:5000
-```
-
-✅ If the server starts successfully, leave this terminal open.
-⚠️ Do not close this terminal while using the website.
-
-What is the backend?
-
-The backend is responsible for performing the actual simulation calculations:
-
-1. The backend receives the input.
-2. It validates the input.
-3. It executes the selected scheduling algorithm.
-4. It calculates the results.
-5. It returns the results to the frontend.
-6. The frontend then displays those results.
-
----
-
-🌐 Step 6: Install Frontend Dependencies
-
-You must open a second terminal because the backend is already running in the first terminal.
-
-1. In VS Code: Terminal → New Terminal
-2. You should now have two terminals:
-   · Terminal 1: Backend (running)
-   · Terminal 2: Frontend
-3. Navigate to the frontend folder:
-
-```bash
-cd frontend
-```
-
-If it starts inside the backend folder, run:
-
-```bash
-cd ..
-cd frontend
-```
-
-4. Install the dependencies:
-
-```bash
-npm install
-```
-
----
-
-▶️ Step 7: Start the Frontend Website
-
-After installing the frontend dependencies, run:
-
-```bash
-npm run dev
-```
-
-Expected result:
-
-```
-VITE ready
-
-Local: http://localhost:5173/
-```
-
-The port may differ if another application is using the default port.
-
-5. Open the website:
-   · Open Google Chrome or another modern browser
-   · Enter the local URL displayed in the terminal (e.g., http://localhost:5173/)
-   · Press Enter
-
-✅ Important rules:
-
-· Keep the backend terminal running.
-· Keep the frontend terminal running.
-· Do not close either terminal while using the application.
-· Open the exact URL displayed by Vite.
-· Do not open index.html directly from File Explorer.
-
----
-
-⚡ Quick Start: All Commands
-
-Terminal 1: Backend
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-Keep this terminal open.
-
-Terminal 2: Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Keep this terminal open as well.
-
-Browser
-
-Open the URL printed by Vite (usually http://localhost:5173/).
-
-💡 First-time setup: Run npm install in both folders.
-💡 Future runs: After dependencies are installed, you normally only need to start the two servers with npm run dev.
-
----
-
-🎮 How to Use the Simulator
-
-The website contains two main modules:
-
-1. CPU Scheduling
-2. Virtual Memory
-
-Use the navigation tabs to switch between them.
-
----
-
-Module 1: CPU Scheduling
-
-Steps:
-
-1. Open the website.
-2. Select the CPU Scheduling module.
-3. Enter the process details.
-4. Select a scheduling algorithm.
-5. Enter the time quantum if Round Robin is selected.
-6. Enter priority values if Priority Scheduling is selected.
-7. Click the simulation button.
-8. View the results table and Gantt chart.
-
-Understanding the Process Inputs
-
-Input Meaning Example
-Process ID Unique name of a process P1
-Arrival Time (AT) Time when a process enters the ready queue 0
-Burst Time (BT) Total CPU time required by a process 5
-Priority Scheduling priority 2
-Time Quantum Maximum CPU time allocated in one Round Robin turn 3
-
-📌 Note: In this project, a smaller priority number represents a higher priority.
-
-Sample CPU Scheduling Input
-
-Process Arrival Time Burst Time Priority
-P1 0 5 2
-P2 1 3 1
-P3 2 8 3
-P4 3 6 2
-
-Try different algorithms using the same process information.
-For Round Robin, set the time quantum to 3.
-
-Understanding CPU Scheduling Results
-
-Term Meaning
-CT Completion Time
-TAT Turnaround Time
-WT Waiting Time
-RT Response Time
-Average WT Average waiting time of all processes
-Average TAT Average turnaround time of all processes
-Gantt Chart Timeline showing CPU execution
-
-📐 Important Formulas
-
-```
-Turnaround Time:  TAT = CT - AT
-Waiting Time:     WT  = TAT - BT
-Response Time:    RT  = First CPU Start Time - AT
-```
-
----
-
-Module 2: Virtual Memory and Page Fault Simulator
-
-Steps:
-
-1. Open the website.
-2. Select the Virtual Memory module.
-3. Enter the number of memory frames.
-4. Enter the page reference string.
-5. Select FIFO, LRU, or Optimal.
-6. Click the simulation button.
-7. View the frame table and statistics.
-
-Understanding the Inputs
-
-Input Meaning Example
-Number of Frames Number of available physical memory frames 3
-Page Reference String Sequence of requested page numbers 7, 0, 1, 2, 0, 3, 0, 4, 2, 3
-Algorithm Page replacement method FIFO
-
-Sample Virtual Memory Input
-
-· Number of frames: 3
-· Page reference string: 7, 0, 1, 2, 0, 3, 0, 4, 2, 3
-
-Expected Results
-
-Algorithm Page Faults Page Hits
-FIFO 9 1
-LRU 8 2
-Optimal 6 4
-
-📐 Understanding Page Hits and Page Faults
-
-· Page Hit: The requested page is already present in a memory frame.
-· Page Fault: The requested page is not present in a memory frame and must be loaded.
-
-```
-Hit Ratio        = (Page Hits / Total Page References) × 100
-Page Fault Ratio = (Page Faults / Total Page References) × 100
-```
-
-For the FIFO example:
-
-```
-Total References = 10
-Page Hits        = 1
-Page Faults      = 9
-
-Hit Ratio        = (1 / 10) × 100 = 10%
-Page Fault Ratio = (9 / 10) × 100 = 90%
-```
-
-✅ The two ratios should total 100% when every reference is classified as either a hit or a fault.
-
----
-
-🧠 CPU Scheduling Algorithms
-
-1️⃣ FCFS — First Come, First Served
-
-· Executes processes in arrival order.
-· Simple to understand and implement.
-· A long process may cause shorter processes to wait (convoy effect).
-· Type: Non-preemptive
-
-2️⃣ SJF — Shortest Job First
-
-· Selects the available process with the shortest CPU burst time.
-· In this project, SJF is non-preemptive.
-· Type: Non-preemptive
-
-3️⃣ SRTF — Shortest Remaining Time First
-
-· Selects the process with the shortest remaining execution time.
-· If a new process arrives with a shorter remaining time, the CPU may switch.
-· Type: Preemptive
-
-4️⃣ Priority Scheduling
-
-· Selects a process based on its priority.
-· Smaller number = Higher priority
-· Larger number = Lower priority
-· Type: Preemptive or Non-Preemptive (depends on implementation)
-
-5️⃣ Round Robin
-
-· Gives each process a fixed amount of CPU time called the time quantum.
-· If a process does not finish within its time quantum, it returns to the ready queue.
-· Commonly used in time-sharing systems.
-· Type: Preemptive
+- Completion Time (CT): Time at which a process finishes execution.
+- Turnaround Time (TAT): Total time from process arrival to completion.
+- Waiting Time (WT): Total time spent waiting in the ready queue.
+- Response Time (RT): Time from arrival until the process first receives the CPU.
+- Average Waiting Time: Average waiting time of all processes.
+- Average Turnaround Time: Average turnaround time of all processes.
+- Gantt Chart: Visual timeline of CPU execution.
 
 ---
 
 💾 Virtual Memory Algorithms
 
-1️⃣ FIFO — First In, First Out
+The simulator supports three page replacement algorithms:
 
-· Replaces the page that has been in memory the longest.
-· Follows the order in which pages entered memory.
-· Does not consider how recently they were used.
+No.| Algorithm| Description
+1| FIFO| Replaces the page that entered memory first.
+2| LRU| Replaces the page that has not been used for the longest time.
+3| Optimal| Replaces the page whose next use is farthest in the future.
 
-2️⃣ LRU — Least Recently Used
+📈 Virtual Memory Results
 
-· Replaces the page that has not been used for the longest time.
-· Uses the history of page references to determine which page to replace.
+- Page Hits: Number of times a requested page is already present in memory.
+- Page Faults: Number of times a requested page is absent from memory.
+- Hit Ratio: Percentage of page references that result in hits.
+- Page Fault Ratio: Percentage of page references that result in faults.
+- Frame Table: Shows the contents of memory frames after each reference.
 
-3️⃣ Optimal Page Replacement
+🧪 Example Input
 
-· Replaces the page whose next use is farthest in the future.
-· Produces the minimum possible number of page faults.
-· Requires knowledge of future page references (theoretical benchmark).
+Number of Frames: 3
+
+Page Reference String:
+7, 0, 1, 2, 0, 3, 0, 4, 2, 3
+
+For this input, the expected results are:
+
+Algorithm| Page Faults| Page Hits
+FIFO| 9| 1
+LRU| 8| 2
+Optimal| 6| 4
+
+Note: These values assume that all frames start empty and that the simulator uses the standard versions of these algorithms.
+
+---
+
+🛠️ Technologies Used
+
+Technology| Purpose
+React.js| Builds the interactive user interface.
+Tailwind CSS| Styles the application.
+Vite| Runs the frontend development server.
+Node.js| Provides the JavaScript runtime for the backend.
+Express.js| Handles HTTP requests and API endpoints.
+JavaScript| Implements the application and simulation logic.
+REST API| Enables communication between the frontend and backend.
+JSON| Transfers simulation inputs and results.
+
+🗄️ Database
+
+No database is required.
+
+The application calculates simulation results when users submit their inputs. It does not require MongoDB, MySQL, or a separate database server.
+
+---
+
+💻 System Requirements
+
+Before running the project locally, make sure you have:
+
+- Operating System: Windows, macOS, or Linux.
+- Node.js: An installed LTS version.
+- npm: Installed with Node.js.
+- Code Editor: Visual Studio Code recommended.
+- Web Browser: Google Chrome, Microsoft Edge, or another modern browser.
+- Internet Connection: Required for downloading the project and installing dependencies.
+
+You do not need MongoDB, MySQL, Python, or a separate database server.
+
+---
+
+📁 Project Structure
+
+The project is organized into separate frontend and backend applications.
+
+Osy-cpu-scheduling-virtual-memory-simulator/
+│
+├── backend/
+│   ├── package.json
+│   ├── server.js
+│   └── ... backend routes and algorithms
+│
+├── frontend/
+│   ├── package.json
+│   ├── index.html
+│   ├── src/
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── components/
+│   │   ├── ... React components and pages
+│   │   └── ...
+│   └── ...
+│
+└── README.md
+
+«Note: This is an illustrative structure. Actual filenames and folders may differ depending on the current implementation.»
+
+---
+
+🚀 Installation and Setup
+
+Follow these steps to run the application on your computer.
+
+Step 1: Download the Project
+
+Option A: Download ZIP
+
+1. Open the "GitHub Repository" (https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator).
+2. Click the green Code button.
+3. Select Download ZIP.
+4. Extract the downloaded ZIP file.
+5. Open the extracted project folder.
+
+Option B: Clone Using Git
+
+Open a terminal and run:
+
+git clone https://github.com/Shubhamghate922/Osy-cpu-scheduling-virtual-memory-simulator.git
+
+Navigate into the project:
+
+cd Osy-cpu-scheduling-virtual-memory-simulator
+
+Step 2: Install Node.js
+
+Download and install the LTS version of Node.js from the official website:
+
+"Download Node.js" (https://nodejs.org/)
+
+Verify the installation:
+
+node -v
+npm -v
+
+Both commands should display version numbers.
+
+Step 3: Open the Project
+
+1. Open Visual Studio Code.
+2. Select File → Open Folder.
+3. Open the main project folder.
+4. Select Terminal → New Terminal.
+
+Make sure the project contains the frontend and backend directories.
+
+Step 4: Install Backend Dependencies
+
+Open the first terminal and run:
+
+cd backend
+npm install
+
+Wait for the dependencies to install.
+
+Step 5: Start the Backend Server
+
+In the same terminal, run:
+
+npm run dev
+
+The backend should start on its configured local port.
+
+For example:
+
+Server running on http://localhost:5000
+
+Keep this terminal open while using the application.
+
+«If "npm run dev" is unavailable, check the backend's "package.json" for the correct start script.»
+
+Step 6: Install Frontend Dependencies
+
+Open a second terminal in Visual Studio Code.
+
+If the new terminal starts in the main project directory, run:
+
+cd frontend
+
+If it starts inside the backend directory, run:
+
+cd ..
+cd frontend
+
+Install the frontend dependencies:
+
+npm install
+
+Step 7: Start the Frontend
+
+In the frontend terminal, run:
+
+npm run dev
+
+Vite should display a local URL similar to:
+
+VITE ready
+
+Local: http://localhost:5173/
+
+Open the URL displayed in your terminal in your web browser.
+
+✅ Quick Start
+
+Terminal 1 — Backend
+
+cd backend
+npm install
+npm run dev
+
+Terminal 2 — Frontend
+
+cd frontend
+npm install
+npm run dev
+
+Browser: Open the local URL displayed by Vite.
+
+Important:
+
+- Run "npm install" in both directories during initial setup.
+- Keep both development servers running.
+- Use the exact frontend URL displayed in the terminal.
+- Do not open "index.html" directly from File Explorer.
+
+---
+
+🎮 How to Use
+
+🖥️ CPU Scheduling Simulator
+
+1. Open the application.
+2. Select the CPU Scheduling module.
+3. Enter the process details.
+4. Select a scheduling algorithm.
+5. Enter priority values when required.
+6. Enter a time quantum when using Round Robin.
+7. Run the simulation.
+8. View the results table and Gantt chart.
+
+Example Process Input
+
+Process ID| Arrival Time| Burst Time| Priority
+P1| 0| 5| 2
+P2| 1| 3| 1
+P3| 2| 8| 3
+P4| 3| 6| 2
+
+Try different algorithms using the same input to compare their results.
+
+💾 Virtual Memory Simulator
+
+1. Open the application.
+2. Select the Virtual Memory module.
+3. Enter the number of memory frames.
+4. Enter the page reference string.
+5. Select FIFO, LRU, or Optimal.
+6. Run the simulation.
+7. Examine the frame table, page hits, and page faults.
+8. Compare the results of different algorithms.
+
+Example Configuration
+
+Frames: 3
+
+Reference String:
+7, 0, 1, 2, 0, 3, 0, 4, 2, 3
+
+Algorithm: FIFO
+
+---
+
+📐 Important Formulas
+
+CPU Scheduling Formulas
+
+Turnaround Time
+
+TAT = CT - AT
+
+Waiting Time
+
+WT = TAT - BT
+
+Response Time
+
+RT = First CPU Start Time - AT
+
+Average Waiting Time
+
+Average WT = Total Waiting Time / Number of Processes
+
+Average Turnaround Time
+
+Average TAT = Total Turnaround Time / Number of Processes
+
+Where:
+
+- AT = Arrival Time
+- BT = Burst Time
+- CT = Completion Time
+
+Virtual Memory Formulas
+
+Hit Ratio
+
+Hit Ratio = (Page Hits / Total Page References) × 100
+
+Page Fault Ratio
+
+Page Fault Ratio = (Page Faults / Total Page References) × 100
+
+For a non-empty reference string:
+
+Page Hits + Page Faults = Total Page References
+
+Therefore:
+
+Hit Ratio + Page Fault Ratio = 100%
 
 ---
 
 🔌 API Documentation
 
-The frontend communicates with the backend using HTTP POST requests.
+The frontend communicates with the backend using HTTP requests and JSON data.
 
 API Base URL
 
-```
 http://localhost:5000/api
-```
 
-🖥️ CPU Scheduling API
+This is the expected local configuration. Confirm the actual port and API routes in the backend source code.
 
-Endpoint:
+1. CPU Scheduling API
 
-```
+Endpoint
+
 POST /api/cpu/simulate
-```
 
-Full local URL:
+Full URL
 
-```
 http://localhost:5000/api/cpu/simulate
-```
 
-Example request:
+Example Request
 
-```json
 {
   "algorithm": "FCFS",
   "processes": [
@@ -659,21 +483,17 @@ Example request:
     }
   ]
 }
-```
 
-Supported algorithm values:
+Supported algorithm identifiers:
 
-```
 FCFS
 SJF
 SRTF
 PRIORITY
 ROUND_ROBIN
-```
 
-Round Robin example:
+Round Robin Example
 
-```json
 {
   "algorithm": "ROUND_ROBIN",
   "timeQuantum": 3,
@@ -686,430 +506,220 @@ Round Robin example:
     }
   ]
 }
-```
 
-💾 Virtual Memory API
+2. Virtual Memory API
 
-Endpoint:
+Endpoint
 
-```
 POST /api/memory/simulate
-```
 
-Full local URL:
+Full URL
 
-```
 http://localhost:5000/api/memory/simulate
-```
 
-Example request:
+Example Request
 
-```json
 {
   "algorithm": "FIFO",
   "frames": 3,
   "pageReferences": [7, 0, 1, 2, 0, 3, 0, 4, 2, 3]
 }
-```
 
-Supported algorithm values:
+Supported algorithm identifiers:
 
-```
 FIFO
 LRU
 OPTIMAL
-```
 
-📏 Input Limits
+Input Validation
 
-· Frames must be between 1 and 10
-· Page references can contain a maximum of 50 values
+The intended input limits are:
 
-⚠️ Error Handling
+- Memory frames: 1 to 10.
+- Page references: Maximum of 50 values.
 
-The backend returns an HTTP 400 response when the submitted input is invalid:
+These limits and the request formats should match the backend implementation.
 
-```json
+Example Error Response
+
 {
   "success": false,
   "message": "Error description"
 }
-```
 
-Unexpected server errors should return HTTP 500.
+Invalid inputs may return HTTP 400, while unexpected server errors may return HTTP 500.
 
 ---
 
-🔄 How the Application Works
+🔄 Application Architecture
 
-The application follows a client-server architecture:
+The application follows a client-server architecture.
 
-```
-         USER
-           |
-           v
-   REACT FRONTEND
-           |
-           | HTTP POST Request
-           | JSON Input
-           v
-   EXPRESS BACKEND
-           |
-           v
-   INPUT VALIDATION
-           |
-           v
-   SELECTED ALGORITHM
-           |
-           v
-   CALCULATE RESULTS
-           |
-           v
-    JSON RESPONSE
-           |
-           v
-   REACT FRONTEND
-           |
-           v
-   DISPLAY RESULTS
-```
+                USER
+                  |
+                  v
+          REACT FRONTEND
+                  |
+                  | HTTP Request
+                  | JSON Input
+                  v
+          EXPRESS BACKEND
+                  |
+                  v
+           INPUT VALIDATION
+                  |
+                  v
+          SELECTED ALGORITHM
+                  |
+                  v
+          CALCULATE RESULTS
+                  |
+                  v
+           JSON RESPONSE
+                  |
+                  v
+          REACT FRONTEND
+                  |
+                  v
+          DISPLAY RESULTS
 
-Working Process
+How It Works
 
-1. The user enters data in the React interface.
-2. The frontend sends the data to the backend using an API request.
-3. Express receives the request.
+1. The user enters simulation data.
+2. The frontend sends the input to the backend.
+3. Express receives the API request.
 4. The backend validates the input.
-5. The appropriate algorithm executes.
-6. The backend calculates the results.
-7. The backend returns the results in JSON format.
+5. The selected algorithm processes the data.
+6. The backend calculates the simulation results.
+7. The results are returned as JSON.
 8. React displays the results in tables, charts, and statistics.
 
-❓ Why These Technologies?
+Why Is There No Database?
 
-Technology Reason
-React Helps build an interactive interface using reusable components
-Tailwind CSS Provides utility classes for styling the interface
-Node.js & Express.js Node.js runs the JavaScript backend; Express.js handles HTTP requests and API routes
-No Database The application calculates results when requested rather than storing data permanently
-Backend Calculations Separates the interface from the calculations, making logic easier to test and maintain
+The application performs calculations using the input provided by the user. It does not need to permanently store user accounts or simulation records.
 
 ---
 
 🛠️ Troubleshooting
 
-Problem 1: node or npm is not recognized
-
-Cause: Node.js may not be installed correctly or may be missing from the system PATH.
+1. "node" or "npm" Is Not Recognized
 
 Solution:
 
-1. Install Node.js from the official website.
-2. Close and reopen VS Code.
-3. Open a new terminal.
-4. Run:
+- Install Node.js.
+- Restart Visual Studio Code.
+- Open a new terminal.
+- Run "node -v" and "npm -v".
 
-```bash
-node -v
-npm -v
-```
-
-If the commands still fail, check your Node.js installation and PATH configuration.
-
----
-
-Problem 2: npm install fails
+2. "npm install" Fails
 
 Possible causes:
 
-· Internet connection problems
-· Incorrect project directory
-· Missing package.json
-· Dependency installation errors
+- Incorrect project directory.
+- Missing "package.json".
+- Internet connection problems.
+- Dependency installation errors.
 
-Solution:
+Solution: Navigate to the correct directory and verify that it contains "package.json".
 
-Check your current directory:
+3. Missing Script: "dev"
 
-```bash
-dir    # Windows
-ls     # macOS/Linux
-```
+Solution: Check the "scripts" section in the relevant "package.json" file. Use a script that actually exists in the project.
 
-Make sure you are inside the correct folder. The backend installation must be run inside backend, and the frontend installation must be run inside frontend.
+4. Port 5000 Is Already in Use
 
----
+Solution: Check whether another backend instance is already running. If necessary, change the backend port and update the frontend API configuration.
 
-Problem 3: Missing script: dev
+5. Port 5173 Is Already in Use
 
-Cause: The relevant package.json file may not contain a dev script.
+Vite may select another available port.
 
-Solution:
+Solution: Open the exact URL displayed in the terminal.
 
-Open the package.json file and check its scripts section.
+6. Unable to Connect to the Backend
 
-A typical Vite frontend configuration includes:
+Check the following:
 
-```json
-{
-  "scripts": {
-    "dev": "vite"
-  }
-}
-```
+- The backend server is running.
+- The API base URL is correct.
+- The configured backend port is correct.
+- The backend routes match the frontend requests.
+- No CORS or network errors are preventing the request.
 
-A backend using Nodemon might include:
+Check "frontend/src/services/api.js" if that file exists in your project.
 
-```json
-{
-  "scripts": {
-    "dev": "nodemon server.js"
-  }
-}
-```
+7. Simulations Are Not Working
 
----
+Verify that:
 
-Problem 4: Port 5000 is already in use
+- Arrival times are non-negative.
+- Burst times are positive.
+- Required priority values are provided.
+- The Round Robin time quantum is positive.
+- The number of frames is valid.
+- The page reference string contains valid values.
+- The selected algorithm is supported.
 
-Cause: Another process may already be using port 5000.
+8. Changes Are Not Appearing
 
-Solution:
+- Save your changes.
+- Refresh the browser.
+- Check the terminal for errors.
+- Restart the relevant development server if necessary.
 
-1. Check whether the backend is already running in another terminal.
-2. If it is, use that existing server instead of starting another copy.
-3. Otherwise, identify the process using port 5000.
-4. If necessary, configure the backend to use another port and update the frontend API URL to match.
+To stop a server, press:
 
----
-
-Problem 5: Port 5173 is already in use
-
-Vite may automatically choose another available port.
-
-Check the terminal output and open the exact URL it displays.
-
----
-
-Problem 6: Unable to connect to the server
-
-Possible causes:
-
-· The backend is not running
-· The frontend is using the wrong API URL
-· The backend is running on another port
-· A request is failing because of CORS or another network configuration issue
-
-Solution:
-
-1. Check the backend terminal.
-2. Make sure the backend started successfully.
-3. Confirm the backend port.
-4. Open frontend/src/services/api.js.
-5. Verify the API base URL (expected default: http://localhost:5000/api).
-6. Check for errors in the backend terminal.
-7. Refresh the website and try again.
-
----
-
-Problem 7: The website opens, but simulations fail
-
-Possible causes:
-
-· Invalid input
-· Unsupported algorithm name
-· Missing required fields
-· Backend calculation errors
-
-Solution:
-
-For CPU Scheduling:
-
-· Enter valid process IDs
-· Use non-negative arrival times
-· Use positive burst times
-· Enter priority values when required
-· Enter a positive time quantum for Round Robin
-
-For Virtual Memory:
-
-· Use between 1 and 10 frames
-· Enter a valid page reference string
-· Enter no more than 50 page references
-
----
-
-Problem 8: Changes are not appearing
-
-Solution:
-
-1. Save the modified files.
-2. Check whether the development servers are still running.
-3. Refresh the browser.
-4. Check the terminal for errors.
-5. If necessary, restart the relevant server.
-
-To stop a server, select its terminal and press:
-
-```
 Ctrl + C
-```
 
 ---
 
-Problem 9: The website works on one computer but not another
-
-Possible causes:
-
-· Node.js is missing on the second computer
-· Dependencies have not been installed
-· The backend is not running
-· The frontend is configured to use an incorrect API address
-
-Solution:
-
-Install Node.js, install dependencies in both folders, start both servers, and open the frontend URL.
-
-If the frontend and backend run on separate computers, the API URL must point to the computer running the backend rather than localhost.
-
----
-
-❓ Frequently Asked Questions
-
-<details>
-<summary><b>Is this project suitable for beginners?</b></summary>
-
-Yes. The project provides an interactive way to understand CPU scheduling and virtual memory concepts. The installation instructions are intended to help beginners start the application.
-
-</details>
-
-<details>
-<summary><b>Do I need MongoDB?</b></summary>
-
-No. The project does not require MongoDB or another database.
-
-</details>
-
-<details>
-<summary><b>Why do I need two terminals?</b></summary>
-
-The first terminal runs the backend server. The second terminal runs the frontend development server. Both must be running for the complete application to work locally.
-
-</details>
-
-<details>
-<summary><b>Can I open <code>index.html</code> directly?</b></summary>
-
-No. The project uses React and Vite, so you should start the frontend development server and open the URL displayed in the terminal. Opening the HTML file directly does not start the backend or provide the intended application environment.
-
-</details>
-
-<details>
-<summary><b>Do I need to install dependencies every time?</b></summary>
-
-No. Normally, you only need to install dependencies during initial setup. You may need to run npm install again if dependencies change or the installation needs to be repaired.
-
-</details>
-
-<details>
-<summary><b>Does the project save simulation results permanently?</b></summary>
-
-No. The project is designed as a stateless simulator and does not require a database to store simulation results.
-
-</details>
-
-<details>
-<summary><b>Can I use the application without an internet connection?</b></summary>
-
-After downloading the project and installing its dependencies, local execution generally works without an internet connection, provided the application does not depend on external resources.
-
-</details>
-
-<details>
-<summary><b>How do I stop the application?</b></summary>
-
-Press Ctrl + C in each terminal to stop the corresponding server.
-
-</details>
-
-<details>
-<summary><b>How do I run the project again?</b></summary>
-
-Open the project in VS Code.
-
-Start the backend:
-
-```bash
-cd backend
-npm run dev
-```
-
-Start the frontend in a second terminal:
-
-```bash
-cd frontend
-npm run dev
-```
-
-Open the URL printed by Vite.
-
-</details>
-
-<details>
-<summary><b>Can I deploy this project online?</b></summary>
-
-Yes. The frontend and backend can be deployed using compatible hosting services. However, the frontend API configuration must point to the deployed backend URL rather than localhost. Both services must be configured correctly for the online application to work.
-
-</details>
-
----
-
-🎯 Learning Outcomes
+🎓 Learning Outcomes
 
 After using this project, students should be able to:
 
-· ✅ Explain CPU scheduling and its purpose
-· ✅ Differentiate between preemptive and non-preemptive algorithms
-· ✅ Understand FCFS, SJF, SRTF, Priority, and Round Robin
-· ✅ Calculate completion, turnaround, waiting, and response times
-· ✅ Interpret a CPU scheduling Gantt chart
-· ✅ Understand virtual memory, paging, and memory frames
-· ✅ Explain page hits and page faults
-· ✅ Compare FIFO, LRU, and Optimal page replacement
-· ✅ Calculate hit and page fault ratios
-· ✅ Understand communication between frontend and backend
-· ✅ Explain REST APIs and JSON
-· ✅ Understand the role of React, Node.js, and Express.js in a web application
+- Explain the purpose of CPU scheduling.
+- Differentiate between preemptive and non-preemptive scheduling.
+- Understand FCFS, SJF, SRTF, Priority, and Round Robin.
+- Calculate CPU scheduling performance metrics.
+- Interpret a Gantt chart.
+- Understand virtual memory, paging, and memory frames.
+- Explain page hits and page faults.
+- Compare FIFO, LRU, and Optimal page replacement.
+- Calculate hit and page fault ratios.
+- Understand REST API communication.
+- Explain the roles of React, Node.js, and Express.js.
+- Understand the basic working of a client-server application.
 
 ---
 
 🎓 Academic Information
 
-Field Details
-Project Title CPU Scheduling Algorithm & Virtual Memory and Page Fault Simulator
-Subject Operating System
-Course Code 315319
-Programme Diploma in Information Technology
-Semester Fifth Semester
-Curriculum MSBTE K Scheme
-Frontend React.js and Tailwind CSS
-Backend Node.js and Express.js
-Database Not Required
+Field| Details
+Project Title| CPU Scheduling Algorithm & Virtual Memory and Page Fault Simulator
+Subject| Operating System
+Course Code| 315319
+Programme| Diploma in Information Technology
+Semester| Fifth Semester
+Curriculum| MSBTE K Scheme
+Frontend| React.js, Tailwind CSS, Vite
+Backend| Node.js, Express.js
+Database| Not Required
+Project Type| Educational Web Application
 
 ---
 
 👨‍💻 Project Purpose
 
-This project is developed for educational purposes to demonstrate Operating System algorithms through interactive simulations. It helps students connect theoretical concepts with practical results and supports academic assignments, demonstrations, and viva preparation.
+This project is developed for educational purposes to demonstrate Operating System algorithms through interactive simulations.
+
+It helps students connect theoretical concepts with practical results and supports academic assignments, practical demonstrations, and viva preparation.
 
 ---
 
-<div align="center">
+<div align="center">🌟 Happy Learning! 🎓💻
 
-🌟 Happy Learning! 🎓💻
+If you find this project helpful, consider giving the repository a ⭐ on GitHub!
 
-If you found this project helpful, please give it a ⭐ on GitHub!
-
-⬆ Back to Top
+"⬆ Back to Top" (#-cpu-scheduling-algorithm--virtual-memory-and-page-fault-simulator)
 
 </div>
